@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.selector {
+    background: linear-gradient(75deg, #85c5a7, #5d9fa3);
+    background-size: 400% 400%;
+    animation: colorchange 10s ease-out infinite;
+}
+
+.home {
+    background: #978B7D;
+    mat-toolbar {
+        background-color: #8ebd99 !important;
+        a {
+            font-size: 18px;
+            color: black;
+        }
+    }
+}
+
+@keyframes colorchange {
+    0% {
+        background-position: 0% 99%;
+    }
+    50% {
+        background-position: 100% 1%;
+    }
+    100% {
+        background-position: 10% 90%;
+    }
+}

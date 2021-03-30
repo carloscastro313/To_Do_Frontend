@@ -1,0 +1,49 @@
+<div class="content" *ngIf="!edit">
+    <h1 style="padding: 15px;">Folders > {{folderName}}</h1>
+    <mat-paginator #paginator [length]="list.length== null? 0 : list.length" [pageSize]="page_size" (page)="handlePage($event)">
+    </mat-paginator>
+
+    <table>
+        <tr *ngFor="let item of list | paginate:page_size:page_number">
+            <td style="text-align: center; width: 5%;">
+                <mat-checkbox type="checkbox" [(disabled)]="loading" [checked]="item.IsDone" (change)="taskComplete(item.id,item.Instruction,item.IsDone)"></mat-checkbox>
+            </td>
+            <td>
+                {{item.Instruction}}
+            </td>
+            <td>
+                <button mat-button style="color: lightskyblue;" [(disabled)]="loading" (click)="editTask(item.id,item.Instruction,item.IsDone)">Edit</button>
+            </td>
+            <td>
+                <button mat-button style="color: lightskyblue;" [(disabled)]="loading" (click)="removeTask(item.id)">Remove</button>
+            </td>
+        </tr>
+    </table>
+
+    <form [formGroup]="myForm" class="form-create">
+        <mat-form-field class="inputLogin">
+            <input matInput formControlName="Instruction" placeholder="New task">
+            <mat-error *ngIf="myForm.get('Instruction').touched && myForm.get('Instruction').invalid">Invalid name</mat-error>
+        </mat-form-field>
+        <button mat-button style="margin-left: 10px;" [(disabled)]="loading" (click)="add()">Add</button>
+        <h3>{{error}}</h3>
+    </form>
+</div>
+<div class="content" *ngIf="edit">
+    <h1 style="padding: 15px;">Edit task {{taskName}}</h1>
+    <form [formGroup]="myForm" class="form-edit">
+        <mat-form-field class="inputLogin">
+            <input matInput formControlName="Instruction" placeholder="New task">
+            <mat-error *ngIf="myForm.get('Instruction').touched && myForm.get('Instruction').invalid">Invalid name</mat-error>
+        </mat-form-field>
+        <h3>{{error}}</h3>
+        <mat-grid-list cols="2" rowHeight="30">
+            <mat-grid-tile [colspan]="1" [rowspan]="3">
+                <button mat-button style="margin-left: 10px;" (click)="update(myForm.get('Instruction').value)">Save</button>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3">
+                <button mat-button style="margin-left: 10px;" (click)="edit = false; myForm.get('Instruction').setValue('');">Cancel</button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</div>

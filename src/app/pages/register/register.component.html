@@ -1,0 +1,31 @@
+<div id="conteiner" class="contentInput">
+    <h4>Registration</h4>
+    <form [formGroup]="myForm">
+        <mat-form-field class="inputLogin">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="myForm.get('email').touched && myForm.get('email').invalid">Invalid email</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="inputLogin">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-error *ngIf="myForm.get('password').touched && myForm.get('password').invalid">Invalid password</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="inputLogin">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username">
+            <mat-error *ngIf="myForm.get('username').touched && myForm.get('username').invalid">Invalid name</mat-error>
+        </mat-form-field>
+        <span>{{error}}</span>
+        <mat-grid-list cols="2" rowHeight="30">
+            <mat-grid-tile [colspan]="1" [rowspan]="3">
+                <button mat-button (click)="Cerrar()">Cancel</button>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3">
+                <button mat-button (click)="Submit()">Sign up</button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</div>

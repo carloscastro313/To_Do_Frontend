@@ -1,0 +1,118 @@
+h1 {
+    padding-left: 10px;
+}
+
+.inputLogin {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+button {
+    margin-left: 30px;
+    margin-right: 30px;
+    background: rgba(180, 172, 150, 0.664);
+    border-radius: 12px;
+    color: white;
+}
+
+#contentInput {
+    background: hsla(0, 28%, 95%, 0.24);
+    border-radius: 12px;
+    display: block;
+    width: 25%;
+    height: 320px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    span {
+        font-size: 15px;
+        padding: 15px;
+        color: red;
+    }
+    mat-grid-list {
+        margin-top: 5px;
+    }
+    @media (max-width: 1180px) {
+        width: 30%;
+        h1 {
+            padding-left: 10px;
+            font-size: 25px;
+        }
+    }
+    @media (max-width: 768px) {
+        width: 50%;
+        height: 340px;
+        h1 {
+            padding-left: 10px;
+            font-size: 25px;
+        }
+    }
+    @media (max-width: 550px) {
+        width: 75%;
+        button {
+            width: 150px;
+        }
+        h1 {
+            padding-left: 10px;
+            font-size: 25px;
+        }
+        mat-grid-list {
+            margin-top: 15px;
+        }
+    }
+    @media (max-width: 390px) {
+        width: 80%;
+        button {
+            width: 150px;
+        }
+        h1 {
+            padding-left: 10px;
+            font-size: 25px;
+        }
+        mat-grid-list {
+            margin-top: 30px;
+        }
+    }
+    @media (max-width: 325px) {
+        width: 90%;
+        button {
+            width: 160px;
+        }
+        h1 {
+            padding-left: 10px;
+            font-size: 25px;
+        }
+        mat-grid-list {
+            margin-top: 30px;
+        }
+    }
+    @media (max-width: 325px) {
+        width: 90%;
+        button {
+            width: 160px;
+        }
+        h1 {
+            padding-left: 10px;
+            font-size: 25px;
+        }
+        mat-grid-list {
+            margin-top: 30px;
+        }
+    }
+    @media (max-width: 280px) {
+        width: 100%;
+        button {
+            width: 50%;
+        }
+        h1 {
+            padding-left: 10px;
+            font-size: 25px;
+        }
+        mat-grid-list {
+            margin-top: 30px;
+        }
+    }
+}

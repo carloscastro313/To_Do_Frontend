@@ -1,0 +1,31 @@
+<div class="content">
+    <h1 style="padding: 15px;">Folders</h1>
+    <mat-paginator #paginator [length]="list.length" [pageSize]="page_size" (page)="handlePage($event)">
+    </mat-paginator>
+
+    <table>
+        <tr *ngFor="let item of list | paginate:page_size:page_number">
+            <td>
+                - {{item.FolderName}}
+            </td>
+            <td>
+                <button style="color: lightskyblue;" mat-button [(disabled)]="loading" [routerLink]="['./task',item.FolderName,item.id]">
+                    View items
+                </button>
+            </td>
+            <td>
+                <button style="color: lightskyblue;" mat-button [(disabled)]="loading" (click)="remove(item.id)">
+                  Remove
+                </button>
+            </td>
+        </tr>
+    </table>
+
+    <form [formGroup]="myForm">
+        <mat-form-field class="inputLogin">
+            <input matInput formControlName="FolderName" placeholder="New Folder">
+            <mat-error *ngIf="myForm.get('FolderName').touched && myForm.get('FolderName').invalid">Invalid name</mat-error>
+        </mat-form-field>
+        <button mat-button [(disabled)]="loading" style="margin-left: 10px;" (click)="add()">Add</button>
+    </form>
+</div>
