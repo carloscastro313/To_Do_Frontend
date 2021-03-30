@@ -27,5 +27,6 @@
             <mat-error *ngIf="myForm.get('FolderName').touched && myForm.get('FolderName').invalid">Invalid name</mat-error>
         </mat-form-field>
         <button mat-button [(disabled)]="loading" style="margin-left: 10px;" (click)="add()">Add</button>
+        <span style="color: darkred;">{{error}}</span>
     </form>
 </div>

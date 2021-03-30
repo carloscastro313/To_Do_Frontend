@@ -11,6 +11,7 @@ export class RegisterComponent implements OnInit {
 
   error : string = ' ';
   myForm : FormGroup;
+  loading: boolean = false;
 
   constructor(
     private loginService : LoginService,
@@ -45,8 +46,10 @@ export class RegisterComponent implements OnInit {
 
   Submit(){
     if(this.myForm.valid){
+      this.loading = true;
       this.loginService.registration(this.myForm.get('email').value, this.myForm.get('password').value,this.myForm.get('username').value,this.router)
-        .catch(err => this.error = err);
+        .catch(err => this.error = err)
+        .finally(() => this.loading = false);
     }
   }
 }

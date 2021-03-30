@@ -39,10 +39,10 @@
         <h3>{{error}}</h3>
         <mat-grid-list cols="2" rowHeight="30">
             <mat-grid-tile [colspan]="1" [rowspan]="3">
-                <button mat-button style="margin-left: 10px;" (click)="update(myForm.get('Instruction').value)">Save</button>
+                <button mat-button style="margin-left: 10px;" [(disabled)]="loading" (click)="update(myForm.get('Instruction').value)">Save</button>
             </mat-grid-tile>
             <mat-grid-tile [colspan]="1" [rowspan]="3">
-                <button mat-button style="margin-left: 10px;" (click)="edit = false; myForm.get('Instruction').setValue('');">Cancel</button>
+                <button mat-button style="margin-left: 10px;" [(disabled)]="loading" (click)="edit = false; myForm.get('Instruction').setValue('');">Cancel</button>
             </mat-grid-tile>
         </mat-grid-list>
     </form>

@@ -14,7 +14,7 @@ export class FoldersComponent implements OnInit {
   @ViewChild('paginator') paginator: MatPaginator;
 
   loading : boolean = false;
-
+  error: string = '';
   page_size: number = 6;
   page_number: number = 1;
   page_SizeOptions: number[] = [3,4,6];
@@ -62,8 +62,11 @@ export class FoldersComponent implements OnInit {
   add(){
     this.loading = true;
     this.task.addFolder(this.myForm.get('FolderName').value)
-        .then(()=> this.updateList())
-        .catch(err => console.log(err))
+        .then(()=> {
+          this.updateList()
+          this.error = '';
+        })
+        .catch(err => this.error = err.error.msg)
         .finally(() => this.loading = false);
   }
 

@@ -15,10 +15,10 @@
         <span>{{error}}</span>
         <mat-grid-list cols="2" rowHeight="30">
             <mat-grid-tile [colspan]="1" [rowspan]="2">
-                <button mat-button (click)="Login()">Log in</button>
+                <button mat-button [(disabled)]="loading" (click)="Login()">Log in</button>
             </mat-grid-tile>
             <mat-grid-tile [colspan]="1" [rowspan]="2">
-                <button mat-button (click)="Register()">Sign up</button>
+                <button mat-button [(disabled)]="loading" (click)="Register()">Sign up</button>
             </mat-grid-tile>
         </mat-grid-list>
     </form>

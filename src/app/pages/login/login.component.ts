@@ -11,7 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
 
   error : string = "   ";
-
+  loading: boolean = false;
   formLogin : FormGroup;
 
   constructor(
@@ -37,7 +37,10 @@ export class LoginComponent implements OnInit {
 
   Login(){
     if(this.formLogin.valid){
-      this.loginService.login(this.formLogin.get('email').value, this.formLogin.get('password').value,this.router).catch(err => this.error = err);
+      this.loading = true;
+      this.loginService.login(this.formLogin.get('email').value, this.formLogin.get('password').value,this.router)
+          .catch(err => this.error = err)
+          .finally(() => this.loading = false);
     }
   }
 
