@@ -9,13 +9,13 @@
                 - {{item.FolderName}}
             </td>
             <td>
-                <button style="color: lightskyblue;" mat-button [(disabled)]="loading" [routerLink]="['./task',item.FolderName,item.id]">
+                <button style="color: rgb(69, 174, 240);" mat-button [(disabled)]="loading" [routerLink]="['./task',item.FolderName,item.id]">
                     View items
                 </button>
             </td>
             <td>
-                <button style="color: lightskyblue;" mat-button [(disabled)]="loading" (click)="remove(item.id)">
-                  Remove
+                <button style="color: rgb(69, 174, 240);" mat-button [(disabled)]="loading" (click)="remove(item.id)">
+                    Remove
                 </button>
             </td>
         </tr>

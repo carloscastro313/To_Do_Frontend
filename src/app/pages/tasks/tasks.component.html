@@ -12,10 +12,10 @@
                 {{item.Instruction}}
             </td>
             <td>
-                <button mat-button style="color: lightskyblue;" [(disabled)]="loading" (click)="editTask(item.id,item.Instruction,item.IsDone)">Edit</button>
+                <button mat-button style="color: rgb(69, 174, 240);" [(disabled)]="loading" (click)="editTask(item.id,item.Instruction,item.IsDone)">Edit</button>
             </td>
             <td>
-                <button mat-button style="color: lightskyblue;" [(disabled)]="loading" (click)="removeTask(item.id)">Remove</button>
+                <button mat-button style="color: rgb(69, 174, 240);" [(disabled)]="loading" (click)="removeTask(item.id)">Remove</button>
             </td>
         </tr>
     </table>
@@ -42,7 +42,7 @@
                 <button mat-button style="margin-left: 10px;" [(disabled)]="loading" (click)="update(myForm.get('Instruction').value)">Save</button>
             </mat-grid-tile>
             <mat-grid-tile [colspan]="1" [rowspan]="3">
-                <button mat-button style="margin-left: 10px;" [(disabled)]="loading" (click)="edit = false; myForm.get('Instruction').setValue('');">Cancel</button>
+                <button mat-button style="margin-left: 10px;" [(disabled)]="loading" (click)="edit = false; myForm.get('Instruction').setValue('');this.myForm.markAsUntouched();">Cancel</button>
             </mat-grid-tile>
         </mat-grid-list>
     </form>

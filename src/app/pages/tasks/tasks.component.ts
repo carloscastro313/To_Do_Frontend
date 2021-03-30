@@ -53,7 +53,7 @@ export class TasksComponent implements OnInit {
   }
 
   updateList(){
-    this.task.getTasks(this.id).then((data) =>{ this.list = data; console.log(data)});
+    this.task.getTasks(this.id).then((data) => this.list = data);
 
   }
 
