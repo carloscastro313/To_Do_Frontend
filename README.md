@@ -1,27 +1,46 @@
 # TodoApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+This web application was made with Angular version 10.1.1.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Start the app
 
-## Code scaffolding
+Run init.bash in the terminal in other to initialize the web app.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Requirements before initializing  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Have installed Node and Angular CLI 10 in your computer
+* Have an internet connection
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Tools, engines and runtimes used
 
-## Running end-to-end tests
+* Visual studio code: 1.54.3
+* MySql Workbench 8.0 CE
+* Xammp: 3.2.4 (10.4.14-MariaDB)
+* Angular CLI: 10.1.1
+* Node: 12.18.3
+* NPM: 6.14.8
+* Nodemon: 2.0.7
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Libraries and frameworks used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Frontend:
+* Angular 10
+* Angular material: 11.2.6
+* @auth0/angular-jwt: V5
+* Express: 4.17.1 (For heroku)
+
+Backend:
+* Express: 4.17.1
+* JsonWebToken: 8.5.1
+* Cors: 2.8.5
+* Sequilize: 6.6.2
+
+
+## Links
+
+Backend repository: https://github.com/carloscastro313/To_Do_Backend.git
+WebApp deployed in heroku: https://todo-app-examen.herokuapp.com/
